@@ -4,9 +4,9 @@
 Rikimaka es una solución web interactiva diseñada para optimizar la administración de proyectos, la solicitud de permisos, la configuración de periodos de vacaciones y el reporte de labores diarias dentro de una organización[cite: 3]. El sistema busca fortalecer la trazabilidad del trabajo, la planificación estratégica del personal y la eficiencia en el uso de recursos mediante una interfaz intuitiva dividida por roles clave (Administrador / Talento Humano / Personal de TI y Colaboradores)[cite: 3].
 
 ##  Integrantes del Equipo y Roles
-* **Frenny Montezuma Castillo** – *Desarrollo Frontend / Arquitectura Web*
-* **Geisel Tatiana Araya Garita** – *Diseño UI/UX y Gestión de Requerimientos*
-* **Jeiferson Elías Rivera Walker** – *Lógica Funcional y Control de Versiones*
+* **Frenny Montezuma Castillo** 
+* **Geisel Tatiana Araya Garita** 
+* **Jeiferson Elías Rivera Walker** 
 
 ##  Alcance del Sistema
 El proyecto contempla el desarrollo de una aplicación web interactiva que incluye:
