@@ -17,8 +17,8 @@ El proyecto contempla el desarrollo de una aplicación web interactiva que inclu
 
 ##  Estructura del Repositorio
 El repositorio se organiza de la siguiente manera para facilitar su revisión:
-* `/docs` -> Contiene el documento PDF con la maquetación completa y los wireframes del sistema (páginas 1 a la 6)[cite: 6].
-* `/src` o raíz del proyecto -> Código fuente de la aplicación web desarrollado con HTML, CSS y JavaScript[cite: 2, 3].
+* `/docs` -> Contiene el documento PDF con la maquetación completa y los wireframes del sistema.
+* `/src` o raíz del proyecto -> Código fuente de la aplicación web desarrollado con HTML, CSS y JavaScript.
 
 ##  Estrategia de Branches y Commits
 Para garantizar un flujo de trabajo ordenado y colaborativo, el equipo implementó la siguiente estrategia de control de versiones en Git:
