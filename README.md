@@ -1,7 +1,7 @@
 # Rikimaka - Sistema Integral de Gestión Humana
 
 ##  Descripción del Proyecto
-Rikimaka es una solución web interactiva diseñada para optimizar la administración de proyectos, la solicitud de permisos, la configuración de periodos de vacaciones y el reporte de labores diarias dentro de una organización[cite: 3]. El sistema busca fortalecer la trazabilidad del trabajo, la planificación estratégica del personal y la eficiencia en el uso de recursos mediante una interfaz intuitiva dividida por roles clave (Administrador / Talento Humano / Personal de TI y Colaboradores)[cite: 3].
+Rikimaka es una solución web interactiva diseñada para optimizar la administración de proyectos, la solicitud de permisos, la configuración de periodos de vacaciones y el reporte de labores diarias dentro de una organización. El sistema busca fortalecer la trazabilidad del trabajo, la planificación estratégica del personal y la eficiencia en el uso de recursos mediante una interfaz intuitiva dividida por roles clave (Administrador / Talento Humano / Personal de TI y Colaboradores).
 
 ##  Integrantes del Equipo y Roles
 * **Frenny Montezuma Castillo** 
@@ -10,10 +10,10 @@ Rikimaka es una solución web interactiva diseñada para optimizar la administra
 
 ##  Alcance del Sistema
 El proyecto contempla el desarrollo de una aplicación web interactiva que incluye:
-* **Módulo de Autenticación:** Control de acceso seguro por roles (Administrador, TI y Colaboradores) con opción de recuperación de credenciales[cite: 4].
-* **Gestión Administrativa y de TI:** Configuración de días feriados, periodos vacacionales permitidos, creación y mantenimiento del catálogo de proyectos, y asignación de personal[cite: 3].
-* **Módulo Operativo (Colaborador):** Solicitud de vacaciones con visualización de calendario y feriados, junto con un sistema detallado de registro diario de actividades por proyecto[cite: 3].
-* **Módulo de Reportes y Métricas:** Consolidación de horas dedicadas por proyecto, análisis de eficiencia presupuestaria, distribución de carga de trabajo e indicadores de productividad[cite: 3].
+* **Módulo de Autenticación:** Control de acceso seguro por roles (Administrador, TI y Colaboradores) con opción de recuperación de credenciales.
+* **Gestión Administrativa y de TI:** Configuración de días feriados, periodos vacacionales permitidos, creación y mantenimiento del catálogo de proyectos, y asignación de personal.
+* **Módulo Operativo (Colaborador):** Solicitud de vacaciones con visualización de calendario y feriados, junto con un sistema detallado de registro diario de actividades por proyecto.
+* **Módulo de Reportes y Métricas:** Consolidación de horas dedicadas por proyecto, análisis de eficiencia presupuestaria, distribución de carga de trabajo e indicadores de productividad.
 
 ##  Estructura del Repositorio
 El repositorio se organiza de la siguiente manera para facilitar su revisión:
