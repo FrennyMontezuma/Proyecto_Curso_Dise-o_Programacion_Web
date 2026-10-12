@@ -1,48 +1,28 @@
-# [Nombre de la Aplicación / Proyecto]
+# Rikimaka - Sistema Integral de Gestión Humana
 
-## Descripción del Proyecto
-[Escribe aquí una breve descripción general de la aplicación web, el propósito del sistema y la problemática que resuelve.]
+##  Descripción del Proyecto
+Rikimaka es una solución web interactiva diseñada para optimizar la administración de proyectos, la solicitud de permisos, la configuración de periodos de vacaciones y el reporte de labores diarias dentro de una organización[cite: 3]. El sistema busca fortalecer la trazabilidad del trabajo, la planificación estratégica del personal y la eficiencia en el uso de recursos mediante una interfaz intuitiva dividida por roles clave (Administrador / Talento Humano / Personal de TI y Colaboradores)[cite: 3].
 
-## Alcance
-[Detalla aquí el alcance del proyecto. Indica la solución que se desarrollará, el contexto del negocio y los límites generales del sistema.]
+##  Integrantes del Equipo y Roles
+* **Frenny Montezuma Castillo** – *Desarrollo Frontend / Arquitectura Web*
+* **Geisel Tatiana Araya Garita** – *Diseño UI/UX y Gestión de Requerimientos*
+* **Jeiferson Elías Rivera Walker** – *Lógica Funcional y Control de Versiones*
 
-## Tipos de Usuario
-1. **[Tipo de Usuario 1, ej: Administrador]**: [Breve descripción de sus responsabilidades en el sistema].
-2. **[Tipo de Usuario 2, ej: Colaborador / Cliente]**: [Breve descripción de sus responsabilidades en el sistema].
+##  Alcance del Sistema
+El proyecto contempla el desarrollo de una aplicación web interactiva que incluye:
+* **Módulo de Autenticación:** Control de acceso seguro por roles (Administrador, TI y Colaboradores) con opción de recuperación de credenciales[cite: 4].
+* **Gestión Administrativa y de TI:** Configuración de días feriados, periodos vacacionales permitidos, creación y mantenimiento del catálogo de proyectos, y asignación de personal[cite: 3].
+* **Módulo Operativo (Colaborador):** Solicitud de vacaciones con visualización de calendario y feriados, junto con un sistema detallado de registro diario de actividades por proyecto[cite: 3].
+* **Módulo de Reportes y Métricas:** Consolidación de horas dedicadas por proyecto, análisis de eficiencia presupuestaria, distribución de carga de trabajo e indicadores de productividad[cite: 3].
 
-## Funcionalidades Principales
-- [Funcionalidad 1]
-- [Funcionalidad 2]
-- [Funcionalidad 3]
-- [Funcionalidad 4]
-- [Funcionalidad 5]
-- [Funcionalidad 6]
+##  Estructura del Repositorio
+El repositorio se organiza de la siguiente manera para facilitar su revisión:
+* `/docs` -> Contiene el documento PDF con la maquetación completa y los wireframes del sistema (páginas 1 a la 6)[cite: 6].
+* `/src` o raíz del proyecto -> Código fuente de la aplicación web desarrollado con HTML, CSS y JavaScript[cite: 2, 3].
 
-## Integrantes del Equipo
-| Nombre Completo | Rol en el Proyecto |
-| :--- | :--- |
-| [Nombre del Integrante 1] | [Rol, ej: Frontend Developer / UI Designer] |
-| [Nombre del Integrante 2] | [Rol, ej: Frontend Developer / Documentador] |
-| [Nombre del Integrante 3] | [Rol, ej: Project Lead / QA] |
-
-## Estrategia de Branches y Commits
-
-### Estrategia de Ramas (Branching Strategy)
-El repositorio utiliza una adaptación de Git Flow:
-- `main`: Contiene el código de producción estable y entregas oficiales.
-- `develop`: Rama principal de desarrollo donde se integran los avances.
-- `feature/[nombre-funcionalidad]`: Ramas individuales para la creación de nuevas funcionalidades o maquetaciones.
-- `docs/[nombre-documento]`: Ramas específicas para actualización de documentación o diagramas.
-
-### Convención de Commits
-Para mantener la trazabilidad de los cambios, se sigue el estándar de Commits Convencionales:
-- `feat:` Nuevas características o pantallas agregadas.
-- `fix:` Correcciones de errores o ajustes en la interfaz.
-- `docs:` Cambios o adiciones en la documentación (incluyendo README y wireframes).
-- `style:` Cambios visuales o formateo sin afectar la lógica del proyecto.
-- `refactor:` Reescribir o reestructurar código o archivos sin cambiar funcionalidad.
-
-Ejemplo de mensaje de commit:
-`docs: agregar especificación de estrategia de ramas en el README`
-
-## Estructura del Repositorio
+##  Estrategia de Branches y Commits
+Para garantizar un flujo de trabajo ordenado y colaborativo, el equipo implementó la siguiente estrategia de control de versiones en Git:
+* **`main` / `master`:** Rama principal que contiene la versión estable y final de la entrega.
+* **`desarrollo` / `dev`:** Rama de integración continua donde se fusionan los avances de todos los integrantes antes de pasar a producción.
+* **Ramas de funcionalidad (`feature/...`):** Creadas de manera individual para el desarrollo de componentes específicos, wireframes e interfaces web.
+* **Convención de commits:** Uso de mensajes claros y descriptivos basados en acciones (ej. `feat: implementa dashboard de colaborador`, `fix: corrige validación en formulario de vacaciones`, `docs: actualiza wireframes en carpeta docs`).
