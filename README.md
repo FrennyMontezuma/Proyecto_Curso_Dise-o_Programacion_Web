@@ -13,7 +13,7 @@ El proyecto contempla el desarrollo de una aplicación web interactiva que inclu
 * **Módulo de Autenticación:** Control de acceso seguro por roles (Administrador, TI y Colaboradores) con opción de recuperación de credenciales.
 * **Gestión Administrativa y de TI:** Configuración de días feriados, periodos vacacionales permitidos, creación y mantenimiento del catálogo de proyectos, y asignación de personal.
 * **Módulo Operativo (Colaborador):** Solicitud de vacaciones con visualización de calendario y feriados, junto con un sistema detallado de registro diario de actividades por proyecto.
-* **Módulo de Reportes y Métricas:** Consolidación de horas dedicadas por proyecto, análisis de eficiencia presupuestaria, distribución de carga de trabajo e indicadores de productividad.
+* **Módulo de Reportes y Métricas:** Herramientas analíticas para aprobar o rechazar solicitudes de vacaciones, consolidar horas reales versus presupuestadas, supervisar indicadores clave de rendimiento (KPIs) y evaluar la distribución de carga de trabajo por colaborador
 
 ##  Estructura del Repositorio
 El repositorio se organiza de la siguiente manera para facilitar su revisión:
