@@ -25,7 +25,7 @@ El proyecto contempla el desarrollo de una aplicación web frontend interactiva 
 El repositorio se organiza de la siguiente manera para facilitar su revisión:
 - `/css` -> Contiene la hoja de estilos modular y centralizada (`styles.css`).
 - `/docs` -> Contiene el documento PDF oficial de entrega (el cual incluye el enlace de acceso directo al repositorio de GitHub).
-- `index.html` -> Código fuente de las pantallas funcionales integradas y navegables.
+- `/src/ Proyecto Rikahama.html` -> Código fuente de las pantallas funcionales integradas y navegables.
 
 ##  Estrategia de Branches y Commits
 Para garantizar un flujo de trabajo ordenado y colaborativo, el equipo implementó la siguiente estrategia de control de versiones en Git:
