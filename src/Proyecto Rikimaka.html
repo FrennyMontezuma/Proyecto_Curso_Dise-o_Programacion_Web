@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rikimaka HR | Gestión humana y proyectos</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!--1 Wireframe login  -->
+  <div id="shell-login" class="login">
+    <header class="topbar">
+      <span class="topbar__section">Gestión humana</span>
+    </header>
+
+    <main id="contenido">
+       <section id="login" class="view login__body">
+        <div class="login__brand"><p>Rikimaka HR</p></div>
+
+        <div class="card--login">
+          <h1>Inicio de sesión</h1>
+          <p class="subtitle">Ingresa tu cuenta corporativa de Rikimaka</p>
+          <form action="#dashboard" method="get" novalidate>
+            <div class="field">
+              <label for="usuario">Correo Institucional / Usuario:</label>
+              <input type="text" inputmode="email" id="usuario" placeholder="colaborador@rikimaka.com" autocomplete="username" required>
+            </div>
+            <div class="field">
+              <label for="clave">Contraseña:</label>
+              <input type="password" id="clave" placeholder="••••••••••••" autocomplete="current-password" required>
+            </div>
+            <label class="check"><input type="checkbox" checked> Recordar sesión en este equipo</label>
+            <button type="submit" class="btn btn--primary btn--block">Iniciar Sesión</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="contenedor">
+        <p>Rikimaka HR | Proyecto Diseño y Programación Web</p>
+        <nav class="menu" aria-label="Enlaces del pie de página">
+          <ul>
+            <li><a href="#login">Inicio de sesión</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+
+  <div id="shell-app" class="layout">
+    <a class="brandbar" href="#dashboard">Rikimaka HR</a>
+
+    <header class="topbar">
+      <span class="topbar__section">Gestión humana</span>
+      <div class="topbar__tools">
+        <div class="search" role="search">
+          <span aria-hidden="true">🔍</span>
+          <label class="sr-only" for="buscar">Buscar proyecto, tarea o recurso</label>
+          <input type="search" id="buscar" placeholder="Buscar proyecto, tarea o recurso...">
+        </div>
+        <div class="pill">
+          <span aria-hidden="true">👤</span>
+          <label class="sr-only" for="rol-activo">Usuario activo</label>
+          <select id="rol-activo"><option value="admin">Usuario Administrador</option><option value="colaborador">Usuario Colaborador</option></select>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav aria-label="Menú principal">
+        <p class="sidebar__title">Menú</p>
+        <ul id="menu">
+          <li><a href="#dashboard">Inicio / Dashboard</a></li>
+          <li><a href="#msg-dashboard">Reporte Diario de Labores</a></li>
+          <li><a href="#feriados">Feriados y Vacaciones</a></li>
+          <li class="admin-only"><a href="#solicitudes">Solicitudes y reportes</a></li>
+          <li class="admin-only"><a href="#catalogo">Catálogo de proyectos</a></li>
+          <li class="admin-only menu-gap"><a href="#asignacion">Asignación de Personal TI</a></li>
+          <li><a href="#login">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+
+      <!--- 2 wireframe dashboard -->
+      <section id="dashboard" class="view">
+        <p class="aviso" id="msg-dashboard" role="status">Esta pantalla está en proceso (solo login y dashboard).</p>
+        <div class="contenedor-flex contenedor-flex--between mb-3">
+          <h1 class="m-0">Dashboard de Gestión Humana y Proyectos</h1>
+          <label class="pill pill--vista" for="vista">Vista:&nbsp;
+            <select id="vista" class="fw-bold">
+              <option value="admin">Admin TH</option>
+              <option value="colaborador">Colaborador</option>
+              <option value="ti">Personal TI</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="tiles" aria-label="Accesos directos">
+          <a class="tile" href="#msg-dashboard">Reportes diarios</a>
+          <a class="tile" href="#msg-dashboard">Vacaciones (TH)</a>
+          <a class="tile admin-only" href="#msg-dashboard">Proyectos (TI)</a>
+        </section>
+
+        <div class="dash-panels">
+          <section class="box box--panel box--tall" aria-labelledby="t-registro">
+            <h2 class="box__bar" id="t-registro">Registro Diario de Labores / Control de Proyectos</h2>
+            <div class="box__body table-wrap">
+              <table aria-labelledby="t-registro">
+                <thead>
+                  <tr>
+                    <th scope="col">Colaborador</th>
+                    <th scope="col">Proyecto</th>
+                    <th scope="col">Horas</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Frenny Montezuma</td>
+                    <td>Sistema CuidApp</td>
+                    <td>8</td>
+                    <td><span class="badge badge--dot badge--ok">Registrado</span></td>
+                  </tr>
+                  <tr>
+                    <td>Geisel Araya</td>
+                    <td>Portal Universitario</td>
+                    <td>6</td>
+                    <td><span class="badge badge--dot badge--warn">En revisión</span></td>
+                  </tr>
+                  <tr>
+                    <td>Jeiferson Rivera</td>
+                    <td>Módulo Rikimaka</td>
+                    <td>8</td>
+                    <td><span class="badge badge--dot badge--ok">Registrado</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="box box--panel box--soft box--tall" aria-labelledby="t-aprob">
+            <h2 class="box__bar box__bar--soft" id="t-aprob">Aprobación de Vacaciones / TI</h2>
+            <div class="box__body">
+              <article class="box box--soft mb-2">
+                <h3>Geisel Araya</h3>
+                <p class="text-muted">21/12 – 24/12 · 4 días · Proyecto A</p>
+                <span class="badge badge--dot badge--warn">Pendiente</span>
+              </article>
+              <article class="box box--soft mb-2">
+                <h3>Jeiferson Rivera</h3>
+                <p class="text-muted">15/08 – 20/08 · 5 días · Proyecto B</p>
+                <span class="badge badge--dot badge--warn">Pendiente</span>
+              </article>
+              <a class="btn btn--primary btn--block admin-only" href="#msg-dashboard">Ver todas las solicitudes</a>
+            </div>
+          </section>
+        </div>
+      </section>
+      
+        <!-- Wireframe 3 vacaciones -->
+      <section id="feriados" class="view">
+        <p class="breadcrumb"><a href="#dashboard">Inicio</a> / Feriados y Vacaciones</p>
+        <div class="main__head">
+          <h1>Feriados y Vacaciones</h1>
+          <p>Defina los feriados y el período de vacaciones que los colaboradores puedan solicitar.</p>
+        </div>
+
+        <div class="contenedor-grid contenedor-grid--2 contenedor-grid--start">
+
+          <!--formularios de admin-->
+          <div class="stack admin-only">
+            <section class="box">
+              <h2 class="box__title">Nuevo día feriado</h2>
+              <form action="#feriados">
+                <div class="field">
+                  <label for="feriado-nombre">Nombre del feriado</label>
+                  <input type="text" id="feriado-nombre" placeholder="Ej:Día del Trabajador">
+                </div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="feriado-fecha">Fecha *</label>
+                    <input type="date" id="feriado-fecha">
+                  </div>
+                  <div class="field">
+                    <label for="feriado-tipo">Tipo</label>
+                    <select id="feriado-tipo">
+                      <option value="nacional">Nacional</option>
+                      <option value="empresa">Empresa</option>
+                    </select>
+                  </div>
+                </div>
+                <label class="check"><input type="checkbox"> Se repite cada año</label>
+                <div class="contenedor-flex">
+                  <button type="submit" class="btn btn--primary btn--wide">Guardar feriado</button>
+                  <button type="reset" class="btn btn--gray btn--wide">Cancelar</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="box">
+              <h2 class="box__title">Nuevo período de vacaciones</h2>
+              <form action="#feriados">
+                <div class="field">
+                  <label for="periodo-nombre">Nombre del período *</label>
+                  <input type="text" id="periodo-nombre" placeholder="Ej: Fin de año">
+                </div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="periodo-desde">Desde *</label>
+                    <input type="date" id="periodo-desde">
+                  </div>
+                  <div class="field">
+                    <label for="periodo-hasta">Hasta *</label>
+                    <input type="date" id="periodo-hasta">
+                  </div>
+                  <div class="field">
+                    <label for="periodo-max">Máximo de días vacacionales</label>
+                    <input type="number" id="periodo-max" min="0" placeholder="00">
+                  </div>
+                  <div class="field">
+                    <label for="periodo-anticipacion">Anticipación mínima (días)</label>
+                    <input type="number" id="periodo-anticipacion" min="0" placeholder="00">
+                  </div>
+                </div>
+                <div class="contenedor-flex">
+                  <button type="submit" class="btn btn--primary btn--wide">Guardar período</button>
+                  <button type="reset" class="btn btn--gray btn--wide">Cancelar</button>
+                </div>
+              </form>
+            </section>
+          </div>
+          
+          <!--calendario y tablas -->
+          <div class="stack">
+            <section class="box">
+              <div class="contenedor-flex contenedor-flex--between">
+                <h2 class="box__title m-0">Calendario Diciembre 2026</h2>
+                <div class="calendar-nav">
+                  <button type="button" class="btn">&lt;</button>
+                  <button type="button" class="btn">&gt;</button>
+                </div>
+              </div>
+              <table class="calendar">
+                <thead>
+                  <tr>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>X</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>S</th>
+                    <th>D</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td class="vacaciones">21</td>
+                    <td class="vacaciones">22</td>
+                    <td class="vacaciones">23</td>
+                    <td class="vacaciones">24</td>
+                    <td class="feriado">25</td>
+                    <td class="vacaciones">26</td>
+                    <td class="vacaciones">27</td>
+                  </tr>
+                  <tr>
+                    <td class="vacaciones">28</td>
+                    <td class="vacaciones">29</td>
+                    <td class="vacaciones">30</td>
+                    <td class="vacaciones">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="legend">
+                <span><i></i>Día feriado</span>
+                <span><i class="gray"></i>Período de vacaciones permitido</span>
+              </div>
+            </section>
+
+            <section class="box">
+              <h2 class="box__title">Feriados registrados</h2>
+              <div class="table-wrap">
+                <table class="table--grid table--grid-bold">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Nombre</th>
+                      <th>Tipo</th>
+                      <th class="admin-only">Acciones</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>01/01</td>
+                      <td>Año Nuevo</td>
+                      <td>Nacional</td>
+                      <td class="admin-only">
+                        <a href="#feriados">Editar</a> 
+                        <a href="#feriados">Eliminar</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>01/05</td>
+                      <td>Día del Trabajador</td>
+                      <td>Nacional</td>
+                      <td class="admin-only">
+                        <a href="#feriados">Editar</a>
+                        <a href="#feriados">Eliminar</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="box__title mt-3">Períodos registrados</h2>
+              <div class="table-wrap">
+                <table class="table--grid table--grid-bold">
+                  <thead>
+                    <tr>
+                      <th>Período</th>
+                      <th>Desde - Hasta</th>
+                      <th>Máx. días</th>
+                      <th class="admin-only">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Fin de año</td>
+                      <td>21/12 - 31/12</td>
+                      <td>8</td>
+                      <td class="admin-only">
+                        <a href="#feriados">Editar</a>
+                        <a href="#feriados">Eliminar</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Medio año</td>
+                      <td>01/07 - 15/07</td>
+                      <td>5</td>
+                      <td class="admin-only">
+                        <a href="#feriados">Editar</a> 
+                        <a href="#feriados">Eliminar</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+    
+    <!-- wireframe 4 solicitudes y reportes -->
+      <section id="solicitudes" class="view">
+        <p class="breadcrumb"><a href="#dashboard">Inicio</a> / Solicitudes y reportes</p>
+        <div class="main__head">
+          <h1>Solicitudes y reportes</h1>
+        </div>
+          <!--tabla de solictudes de vacaciones-->
+        <section class="box mb-4">
+          <h2 class="box__title">Solicitudes de vacaciones</h2>
+          <div class="table-wrap">
+            <table class="table--grid table--grid-bold">
+              <thead>
+                <tr>
+                  <th>Colaborador</th>
+                  <th>Desde - Hasta</th>
+                  <th>Días</th>
+                  <th>Proyecto</th>
+                  <th>Validación</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Geisel Araya</td>
+                  <td>21/12 - 24/12</td>
+                  <td>4</td>
+                  <td>Portal Universitario</td>
+                  <td><span class="badge badge--ok">Dentro del rango</span></td>
+                  <td><span class="badge badge--warn">Pendiente</span></td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--sm">Aprobar</button>
+                    <button type="button" class="btn btn--gray btn--sm">Rechazar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jeiferson Rivera</td>
+                  <td>15/08 - 20/08</td>
+                  <td>5</td>
+                  <td>Módulo Rikimaka</td>
+                  <td><span class="badge badge--ok">Dentro del rango</span></td>
+                  <td><span class="badge badge--warn">Pendiente</span></td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--sm">Aprobar</button>
+                    <button type="button" class="btn btn--gray btn--sm">Rechazar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Frenny Montezuma</td>
+                  <td>02/03 - 10/03</td>
+                  <td>7</td>
+                  <td>Sistema CuidApp</td>
+                  <td><span class="badge badge--danger">Fuera de rango</span></td>
+                  <td><span class="badge badge--warn">Pendiente</span></td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--sm">Aprobar</button>
+                    <button type="button" class="btn btn--gray btn--sm">Rechazar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+         <!--reportes-->
+        <section class="mb-4">
+          <h2>Reportes y métricas</h2>
+          <p class="text-muted">Indicadores del rango seleccionado</p>
+          <form action="#solicitudes" class="contenedor-flex contenedor-flex--end mb-3">
+            <div class="field field--fixed m-0">
+              <label for="reporte-desde">Desde</label>
+              <input type="date" id="reporte-desde">
+            </div>
+            <div class="field field--fixed m-0">
+              <label for="reporte-hasta">Hasta</label>
+              <input type="date" id="reporte-hasta">
+            </div>
+            <div class="field field--fixed m-0">
+              <label for="reporte-proyecto">Proyecto</label>
+              <select id="reporte-proyecto">
+                <option>Todos los proyectos</option>
+                <option>Sistema CuidApp</option>
+                <option>Portal Universitario</option>
+                <option>Módulo Rikimaka</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--wide">Generar</button>
+            <button type="button" class="btn btn--wide">Exportar PDF</button>
+          </form>
+
+          <div class="contenedor-grid contenedor-grid--4">
+            <article class="kpi kpi--card">
+              <span class="kpi__label">Horas registradas</span>
+              <span class="kpi__value">164 h</span>
+            </article>
+            <article class="kpi kpi--card">
+              <span class="kpi__label">Uso de recursos</span>
+              <span class="kpi__value">78 %</span>
+            </article>
+            <article class="kpi kpi--card">
+              <span class="kpi__label">Productividad</span>
+              <span class="kpi__value">85 %</span>
+            </article>
+            <article class="kpi kpi--card">
+              <span class="kpi__label">Solicitudes pendientes</span>
+              <span class="kpi__value">3</span>
+            </article>
+          </div>
+        </section>
+
+        <div class="contenedor-grid contenedor-grid--main-aside">
+         
+          <!--grafico de desempeño-->
+          <section class="box">
+            <h2 class="box__title">Métricas</h2>
+            <div class="chart">
+              <div class="chart__group">
+                <div class="chart__bars">
+                  <div class="chart__bar" style="--h: 55%;"></div>
+                  <div class="chart__bar chart__bar--alt" style="--h: 75%;"></div>
+                </div>
+              </div>
+              <div class="chart__group">
+                <div class="chart__bars">
+                  <div class="chart__bar" style="--h: 90%;"></div>
+                  <div class="chart__bar chart__bar--alt" style="--h: 72%;"></div>
+                </div>
+              </div>
+              <div class="chart__group">
+                <div class="chart__bars">
+                  <div class="chart__bar" style="--h: 35%;"></div>
+                  <div class="chart__bar chart__bar--alt" style="--h: 55%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chart__labels">
+              <span>CuidApp</span>
+              <span>Portal</span>
+              <span>Rikimaka</span>
+            </div>
+            <div class="legend">
+              <span><i></i>Horas reales</span>
+              <span><i class="alt"></i>Horas presupuestas</span>
+            </div>
+          </section>
+
+          <section class="box">
+            <h2 class="box__title">Distribución de carga por colaborador</h2>
+            <div class="dist">
+              <span>Frenny M.</span>
+              <span class="dist__bar">
+                <span class="dist__fill" style="--value: 75%;"></span>
+              </span>
+            </div>
+            <div class="dist">
+              <span>Geisel A.</span>
+              <span class="dist__bar">
+                <span class="dist__fill" style="--value: 57%;"></span>
+              </span>
+            </div>
+            <div class="dist">
+              <span>Jeiferson R.</span>
+              <span class="dist__bar">
+              <span class="dist__fill" style="--value: 40%;"></span>
+            </span>
+            </div>
+          </section>
+           </div>
+      </section>
+
+      <!-- wireframe 5 catálogo de proyectos -->
+      <section id="catalogo" class="view">
+        <p class="breadcrumb"><a href="#dashboard">Inicio</a> / Catálogo de proyectos</p>
+        <div class="main__head">
+          <h1>Catálogo de proyectos</h1>
+          <p>Registre los proyectos de TI y administre su información.</p>
+        </div>
+
+        <section class="box mb-4">
+          <h2 class="box__title" id="titulo-form-proyecto">Nuevo proyecto</h2>
+          <p class="aviso" id="msg-proyecto" role="status"></p>
+          <form id="form-proyecto" novalidate>
+            <input type="hidden" id="proyecto-id">
+            <div class="form-grid">
+              <div class="field">
+                <label for="proyecto-nombre">Nombre del proyecto *</label>
+                <input type="text" id="proyecto-nombre" placeholder="Ej: Sistema CuidApp">
+              </div>
+              <div class="field">
+                <label for="proyecto-responsable">Responsable *</label>
+                <select id="proyecto-responsable"></select>
+              </div>
+              <div class="field">
+                <label for="proyecto-inicio">Fecha de inicio *</label>
+                <input type="date" id="proyecto-inicio">
+              </div>
+              <div class="field">
+                <label for="proyecto-fin">Fecha final *</label>
+                <input type="date" id="proyecto-fin">
+              </div>
+              <div class="field">
+                <label for="proyecto-horas">Horas presupuestadas *</label>
+                <input type="number" id="proyecto-horas" min="1" placeholder="000">
+              </div>
+              <div class="field">
+                <label for="proyecto-estado">Estado</label>
+                <select id="proyecto-estado">
+                  <option value="Activo">Activo</option>
+                  <option value="En pausa">En pausa</option>
+                  <option value="Finalizado">Finalizado</option>
+                </select>
+              </div>
+            </div>
+            <div class="contenedor-flex">
+              <button type="submit" class="btn btn--primary btn--wide" id="btn-guardar-proyecto">Guardar proyecto</button>
+              <button type="button" class="btn btn--gray btn--wide" id="btn-cancelar-proyecto">Cancelar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="box">
+          <h2 class="box__title">Proyectos registrados</h2>
+          <div class="table-wrap">
+            <table class="table--grid table--grid-bold">
+              <thead>
+                <tr>
+                  <th>Proyecto</th>
+                  <th>Responsable</th>
+                  <th>Inicio - Fin</th>
+                  <th>Horas pres.</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-proyectos"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- wireframe 6 asignación de personal TI -->
+      <section id="asignacion" class="view">
+        <p class="breadcrumb"><a href="#dashboard">Inicio</a> / Asignación de Personal TI</p>
+        <div class="main__head">
+          <h1>Asignación de Personal TI</h1>
+          <p>Asigne colaboradores a los proyectos activos del catálogo.</p>
+        </div>
+
+        <section class="box mb-4">
+          <h2 class="box__title">Nueva asignación</h2>
+          <p class="aviso" id="msg-asignacion" role="status"></p>
+          <form id="form-asignacion" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="asignacion-colaborador">Colaborador *</label>
+                <select id="asignacion-colaborador"></select>
+              </div>
+              <div class="field">
+                <label for="asignacion-proyecto">Proyecto *</label>
+                <select id="asignacion-proyecto"></select>
+              </div>
+              <div class="field">
+                <label for="asignacion-rol">Rol *</label>
+                <select id="asignacion-rol">
+                  <option value="">Seleccione...</option>
+                  <option value="Desarrollador">Desarrollador</option>
+                  <option value="Analista">Analista</option>
+                  <option value="QA">QA</option>
+                  <option value="Líder de proyecto">Líder de proyecto</option>
+                  <option value="Diseñador UX">Diseñador UX</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="asignacion-dedicacion">Dedicación (%) *</label>
+                <input type="number" id="asignacion-dedicacion" min="1" max="100" placeholder="00">
+              </div>
+              <div class="field">
+                <label for="asignacion-desde">Desde *</label>
+                <input type="date" id="asignacion-desde">
+              </div>
+              <div class="field">
+                <label for="asignacion-hasta">Hasta *</label>
+                <input type="date" id="asignacion-hasta">
+              </div>
+            </div>
+            <div class="contenedor-flex">
+              <button type="submit" class="btn btn--primary btn--wide">Guardar asignación</button>
+              <button type="button" class="btn btn--gray btn--wide" id="btn-cancelar-asignacion">Cancelar</button>
+            </div>
+          </form>
+        </section>
+
+        <div class="contenedor-grid contenedor-grid--main-aside">
+          <section class="box">
+            <h2 class="box__title">Personal asignado</h2>
+            <div class="table-wrap">
+              <table class="table--grid table--grid-bold">
+                <thead>
+                  <tr>
+                    <th>Colaborador</th>
+                    <th>Proyecto</th>
+                    <th>Rol</th>
+                    <th>Dedicación</th>
+                    <th>Desde - Hasta</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-asignaciones"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="box">
+            <h2 class="box__title">Carga total por colaborador</h2>
+            <div id="carga-colaboradores"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="contenedor">
+        <p>Rikimaka HR  Proyecto Diseño y Programación Web</p>
+        <nav class="menu">
+          <ul>
+            <li><a href="#dashboard">Inicio</a></li>
+            <li><a href="#login">Cerrar sesión</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+// ==========================================================
+// Rikimaka HR
+// Catálogo de proyectos + Asignación de Personal TI
+// JavaScript simple, sin librerías.
+// Los datos se guardan en el navegador (localStorage), así
+// que no se pierden al recargar la página.
+// ==========================================================
+
+
+// ---------- 1. DATOS ----------
+
+// Lista fija de colaboradores (los mismos nombres del dashboard)
+var COLABORADORES = ["Frenny Montezuma", "Geisel Araya", "Jeiferson Rivera"];
+
+// Proyectos iniciales (los mismos que ya aparecen en el dashboard)
+var proyectos = cargarDatos("rk_proyectos", [
+  { id: 1, nombre: "Sistema CuidApp",      responsable: "Frenny Montezuma", inicio: "2026-01-15", fin: "2026-12-31", horas: 400, estado: "Activo" },
+  { id: 2, nombre: "Portal Universitario", responsable: "Geisel Araya",     inicio: "2026-02-01", fin: "2026-12-15", horas: 320, estado: "Activo" },
+  { id: 3, nombre: "Módulo Rikimaka",      responsable: "Jeiferson Rivera", inicio: "2026-03-01", fin: "2027-01-31", horas: 250, estado: "Activo" }
+]);
+
+// Asignaciones iniciales
+var asignaciones = cargarDatos("rk_asignaciones", [
+  { id: 1, colaborador: "Frenny Montezuma", proyectoId: 1, rol: "Desarrollador", dedicacion: 75, desde: "2026-01-15", hasta: "2026-12-31" },
+  { id: 2, colaborador: "Geisel Araya",     proyectoId: 2, rol: "Analista",      dedicacion: 60, desde: "2026-02-01", hasta: "2026-12-15" },
+  { id: 3, colaborador: "Jeiferson Rivera", proyectoId: 3, rol: "Desarrollador", dedicacion: 40, desde: "2026-03-01", hasta: "2027-01-31" }
+]);
+
+
+// ---------- 2. FUNCIONES DE AYUDA ----------
+
+// Lee datos guardados; si no hay nada, usa los datos iniciales
+function cargarDatos(clave, datosIniciales) {
+  var texto = localStorage.getItem(clave);
+  if (texto) {
+    return JSON.parse(texto);
+  }
+  return datosIniciales;
+}
+
+function guardarDatos(clave, datos) {
+  localStorage.setItem(clave, JSON.stringify(datos));
+}
+
+// Calcula el siguiente id (el mayor + 1)
+function siguienteId(lista) {
+  var mayor = 0;
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].id > mayor) {
+      mayor = lista[i].id;
+    }
+  }
+  return mayor + 1;
+}
+
+// Evita que un texto escrito por el usuario rompa el HTML
+function escaparHTML(texto) {
+  return String(texto)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// "2026-12-31" -> "31/12/2026"
+function formatearFecha(fecha) {
+  var partes = fecha.split("-");
+  return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+// Muestra u oculta un mensaje (texto vacío = ocultar)
+function mostrarMensaje(idElemento, texto) {
+  var caja = document.getElementById(idElemento);
+  if (texto === "") {
+    caja.style.display = "none";
+  } else {
+    caja.textContent = texto;
+    caja.style.display = "block";
+  }
+}
+
+// Busca un proyecto por su id (devuelve null si no existe)
+function buscarProyecto(id) {
+  for (var i = 0; i < proyectos.length; i++) {
+    if (proyectos[i].id === id) {
+      return proyectos[i];
+    }
+  }
+  return null;
+}
+
+// Clase de color según el estado del proyecto
+function claseEstado(estado) {
+  if (estado === "Activo") {
+    return "badge badge--ok";
+  }
+  if (estado === "En pausa") {
+    return "badge badge--warn";
+  }
+  return "badge";
+}
+
+// Llena un <select> con los colaboradores
+function llenarColaboradores(idSelect) {
+  var select = document.getElementById(idSelect);
+  var html = '<option value="">Seleccione...</option>';
+  for (var i = 0; i < COLABORADORES.length; i++) {
+    html += '<option value="' + COLABORADORES[i] + '">' + COLABORADORES[i] + "</option>";
+  }
+  select.innerHTML = html;
+}
+
+
+// ==========================================================
+// 3. CATÁLOGO DE PROYECTOS
+// ==========================================================
+
+// Dibuja la tabla de proyectos
+function pintarProyectos() {
+  var cuerpo = document.getElementById("tabla-proyectos");
+  var html = "";
+
+  if (proyectos.length === 0) {
+    html = '<tr><td colspan="6">No hay proyectos registrados.</td></tr>';
+  }
+
+  for (var i = 0; i < proyectos.length; i++) {
+    var p = proyectos[i];
+    html += "<tr>";
+    html += "<td>" + escaparHTML(p.nombre) + "</td>";
+    html += "<td>" + escaparHTML(p.responsable) + "</td>";
+    html += "<td>" + formatearFecha(p.inicio) + " - " + formatearFecha(p.fin) + "</td>";
+    html += "<td>" + p.horas + " h</td>";
+    html += '<td><span class="' + claseEstado(p.estado) + '">' + p.estado + "</span></td>";
+    html += "<td>";
+    html += '<button type="button" class="btn btn--gray btn--sm" onclick="editarProyecto(' + p.id + ')">Editar</button> ';
+    html += '<button type="button" class="btn btn--gray btn--sm" onclick="eliminarProyecto(' + p.id + ')">Eliminar</button>';
+    html += "</td>";
+    html += "</tr>";
+  }
+
+  cuerpo.innerHTML = html;
+}
+
+// Deja el formulario de proyecto en modo "nuevo"
+function limpiarFormProyecto() {
+  document.getElementById("form-proyecto").reset();
+  document.getElementById("proyecto-id").value = "";
+  document.getElementById("titulo-form-proyecto").textContent = "Nuevo proyecto";
+  document.getElementById("btn-guardar-proyecto").textContent = "Guardar proyecto";
+}
+
+// Botón Cancelar
+function cancelarProyecto() {
+  limpiarFormProyecto();
+  mostrarMensaje("msg-proyecto", "");
+}
+
+// Guardar (crear o actualizar) un proyecto
+function guardarProyecto(evento) {
+  evento.preventDefault(); // evita que la página se recargue
+
+  var id = document.getElementById("proyecto-id").value;
+  var nombre = document.getElementById("proyecto-nombre").value.trim();
+  var responsable = document.getElementById("proyecto-responsable").value;
+  var inicio = document.getElementById("proyecto-inicio").value;
+  var fin = document.getElementById("proyecto-fin").value;
+  var horas = Number(document.getElementById("proyecto-horas").value);
+  var estado = document.getElementById("proyecto-estado").value;
+
+  // Validaciones
+  if (nombre === "" || responsable === "" || inicio === "" || fin === "") {
+    mostrarMensaje("msg-proyecto", "Complete el nombre, el responsable y las fechas del proyecto.");
+    return;
+  }
+  if (fin < inicio) {
+    mostrarMensaje("msg-proyecto", "La fecha final no puede ser anterior a la fecha de inicio.");
+    return;
+  }
+  if (!(horas > 0)) {
+    mostrarMensaje("msg-proyecto", "Las horas presupuestadas deben ser mayores a 0.");
+    return;
+  }
+
+  // No permitir dos proyectos con el mismo nombre
+  for (var i = 0; i < proyectos.length; i++) {
+    var mismoNombre = proyectos[i].nombre.toLowerCase() === nombre.toLowerCase();
+    var esOtro = String(proyectos[i].id) !== id;
+    if (mismoNombre && esOtro) {
+      mostrarMensaje("msg-proyecto", "Ya existe un proyecto con ese nombre.");
+      return;
+    }
+  }
+
+  var mensaje = "";
+  if (id === "") {
+    // Proyecto nuevo
+    proyectos.push({
+      id: siguienteId(proyectos),
+      nombre: nombre,
+      responsable: responsable,
+      inicio: inicio,
+      fin: fin,
+      horas: horas,
+      estado: estado
+    });
+    mensaje = "Proyecto guardado correctamente.";
+  } else {
+    // Proyecto existente: se actualiza
+    var p = buscarProyecto(Number(id));
+    p.nombre = nombre;
+    p.responsable = responsable;
+    p.inicio = inicio;
+    p.fin = fin;
+    p.horas = horas;
+    p.estado = estado;
+    mensaje = "Proyecto actualizado correctamente.";
+  }
+
+  guardarDatos("rk_proyectos", proyectos);
+  limpiarFormProyecto();
+  pintarProyectos();
+  llenarSelectProyectos(); // el select de Asignación se actualiza solo
+  pintarAsignaciones();
+  mostrarMensaje("msg-proyecto", mensaje);
+}
+
+// Pasar un proyecto al formulario para editarlo
+function editarProyecto(id) {
+  var p = buscarProyecto(id);
+
+  document.getElementById("proyecto-id").value = p.id;
+  document.getElementById("proyecto-nombre").value = p.nombre;
+  document.getElementById("proyecto-responsable").value = p.responsable;
+  document.getElementById("proyecto-inicio").value = p.inicio;
+  document.getElementById("proyecto-fin").value = p.fin;
+  document.getElementById("proyecto-horas").value = p.horas;
+  document.getElementById("proyecto-estado").value = p.estado;
+
+  document.getElementById("titulo-form-proyecto").textContent = "Editar proyecto";
+  document.getElementById("btn-guardar-proyecto").textContent = "Actualizar proyecto";
+  mostrarMensaje("msg-proyecto", "");
+}
+
+// Eliminar un proyecto (solo si no tiene personal asignado)
+function eliminarProyecto(id) {
+  for (var i = 0; i < asignaciones.length; i++) {
+    if (asignaciones[i].proyectoId === id) {
+      mostrarMensaje("msg-proyecto", "No se puede eliminar: el proyecto tiene personal asignado. Quite primero las asignaciones.");
+      return;
+    }
+  }
+
+  if (!confirm("¿Desea eliminar este proyecto?")) {
+    return;
+  }
+
+  var nuevaLista = [];
+  for (var j = 0; j < proyectos.length; j++) {
+    if (proyectos[j].id !== id) {
+      nuevaLista.push(proyectos[j]);
+    }
+  }
+  proyectos = nuevaLista;
+
+  guardarDatos("rk_proyectos", proyectos);
+  limpiarFormProyecto();
+  pintarProyectos();
+  llenarSelectProyectos();
+  mostrarMensaje("msg-proyecto", "Proyecto eliminado.");
+}
+
+
+// ==========================================================
+// 4. ASIGNACIÓN DE PERSONAL TI
+// ==========================================================
+
+// Llena el select de proyectos (solo los que están Activos)
+function llenarSelectProyectos() {
+  var select = document.getElementById("asignacion-proyecto");
+  var seleccionado = select.value; // para no perder lo que el usuario eligió
+  var html = '<option value="">Seleccione...</option>';
+
+  for (var i = 0; i < proyectos.length; i++) {
+    if (proyectos[i].estado === "Activo") {
+      html += '<option value="' + proyectos[i].id + '">' + escaparHTML(proyectos[i].nombre) + "</option>";
+    }
+  }
+
+  select.innerHTML = html;
+  select.value = seleccionado;
+}
+
+// Suma el % de dedicación que ya tiene un colaborador
+function totalDedicacion(colaborador) {
+  var total = 0;
+  for (var i = 0; i < asignaciones.length; i++) {
+    if (asignaciones[i].colaborador === colaborador) {
+      total += asignaciones[i].dedicacion;
+    }
+  }
+  return total;
+}
+
+// Dibuja la tabla de asignaciones
+function pintarAsignaciones() {
+  var cuerpo = document.getElementById("tabla-asignaciones");
+  var html = "";
+
+  if (asignaciones.length === 0) {
+    html = '<tr><td colspan="6">No hay personal asignado.</td></tr>';
+  }
+
+  for (var i = 0; i < asignaciones.length; i++) {
+    var a = asignaciones[i];
+    var proyecto = buscarProyecto(a.proyectoId);
+    var nombreProyecto = proyecto ? proyecto.nombre : "(proyecto eliminado)";
+
+    html += "<tr>";
+    html += "<td>" + escaparHTML(a.colaborador) + "</td>";
+    html += "<td>" + escaparHTML(nombreProyecto) + "</td>";
+    html += "<td>" + escaparHTML(a.rol) + "</td>";
+    html += "<td>" + a.dedicacion + " %</td>";
+    html += "<td>" + formatearFecha(a.desde) + " - " + formatearFecha(a.hasta) + "</td>";
+    html += '<td><button type="button" class="btn btn--gray btn--sm" onclick="quitarAsignacion(' + a.id + ')">Quitar</button></td>';
+    html += "</tr>";
+  }
+
+  cuerpo.innerHTML = html;
+  pintarCarga();
+}
+
+// Dibuja la carga total de cada colaborador (barras)
+function pintarCarga() {
+  var contenedor = document.getElementById("carga-colaboradores");
+  var html = "";
+
+  for (var i = 0; i < COLABORADORES.length; i++) {
+    var total = totalDedicacion(COLABORADORES[i]);
+    var ancho = total > 100 ? 100 : total;
+
+    html += '<div class="dist">';
+    html += "<span>" + COLABORADORES[i] + " (" + total + "%)</span>";
+    html += '<span class="dist__bar"><span class="dist__fill" style="--value: ' + ancho + '%;"></span></span>';
+    html += "</div>";
+  }
+
+  contenedor.innerHTML = html;
+}
+
+// Guardar una nueva asignación
+function guardarAsignacion(evento) {
+  evento.preventDefault();
+
+  var colaborador = document.getElementById("asignacion-colaborador").value;
+  var proyectoId = Number(document.getElementById("asignacion-proyecto").value);
+  var rol = document.getElementById("asignacion-rol").value;
+  var dedicacion = Number(document.getElementById("asignacion-dedicacion").value);
+  var desde = document.getElementById("asignacion-desde").value;
+  var hasta = document.getElementById("asignacion-hasta").value;
+
+  // Validaciones
+  if (colaborador === "" || proyectoId === 0 || rol === "" || desde === "" || hasta === "") {
+    mostrarMensaje("msg-asignacion", "Complete todos los campos de la asignación.");
+    return;
+  }
+  if (!(dedicacion >= 1 && dedicacion <= 100)) {
+    mostrarMensaje("msg-asignacion", "La dedicación debe estar entre 1 y 100 %.");
+    return;
+  }
+  if (hasta < desde) {
+    mostrarMensaje("msg-asignacion", "La fecha final no puede ser anterior a la fecha de inicio.");
+    return;
+  }
+
+  // Las fechas deben estar dentro del rango del proyecto
+  var proyecto = buscarProyecto(proyectoId);
+  if (desde < proyecto.inicio || hasta > proyecto.fin) {
+    mostrarMensaje("msg-asignacion", "Las fechas deben estar dentro del rango del proyecto (" +
+      formatearFecha(proyecto.inicio) + " - " + formatearFecha(proyecto.fin) + ").");
+    return;
+  }
+
+  // El colaborador no puede estar dos veces en el mismo proyecto
+  for (var i = 0; i < asignaciones.length; i++) {
+    if (asignaciones[i].colaborador === colaborador && asignaciones[i].proyectoId === proyectoId) {
+      mostrarMensaje("msg-asignacion", colaborador + " ya está asignado a este proyecto.");
+      return;
+    }
+  }
+
+  // La dedicación total no puede pasar de 100 %
+  var actual = totalDedicacion(colaborador);
+  if (actual + dedicacion > 100) {
+    mostrarMensaje("msg-asignacion", colaborador + " ya tiene " + actual + " % asignado. Solo le quedan " + (100 - actual) + " % disponibles.");
+    return;
+  }
+
+  asignaciones.push({
+    id: siguienteId(asignaciones),
+    colaborador: colaborador,
+    proyectoId: proyectoId,
+    rol: rol,
+    dedicacion: dedicacion,
+    desde: desde,
+    hasta: hasta
+  });
+
+  guardarDatos("rk_asignaciones", asignaciones);
+  document.getElementById("form-asignacion").reset();
+  pintarAsignaciones();
+  mostrarMensaje("msg-asignacion", "Asignación guardada correctamente.");
+}
+
+// Botón Cancelar
+function cancelarAsignacion() {
+  document.getElementById("form-asignacion").reset();
+  mostrarMensaje("msg-asignacion", "");
+}
+
+// Quitar una asignación
+function quitarAsignacion(id) {
+  if (!confirm("¿Desea quitar esta asignación?")) {
+    return;
+  }
+
+  var nuevaLista = [];
+  for (var i = 0; i < asignaciones.length; i++) {
+    if (asignaciones[i].id !== id) {
+      nuevaLista.push(asignaciones[i]);
+    }
+  }
+  asignaciones = nuevaLista;
+
+  guardarDatos("rk_asignaciones", asignaciones);
+  pintarAsignaciones();
+  mostrarMensaje("msg-asignacion", "Asignación eliminada.");
+}
+
+
+// ==========================================================
+// 5. INICIO: se ejecuta al cargar la página
+// ==========================================================
+llenarColaboradores("proyecto-responsable");
+llenarColaboradores("asignacion-colaborador");
+llenarSelectProyectos();
+pintarProyectos();
+pintarAsignaciones();
+
+document.getElementById("form-proyecto").addEventListener("submit", guardarProyecto);
+document.getElementById("btn-cancelar-proyecto").addEventListener("click", cancelarProyecto);
+document.getElementById("form-asignacion").addEventListener("submit", guardarAsignacion);
+document.getElementById("btn-cancelar-asignacion").addEventListener("click", cancelarAsignacion);
+
+  </script>
+</body>
+</html>
